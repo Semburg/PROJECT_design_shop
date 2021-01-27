@@ -71,6 +71,102 @@ header{
 }
 
 
+/* **************************** */
+/* *        MAIN BURGER AB HIER !!! */
+/* * */
+
+#tripple{
+    display: none;
+    position: relative;
+    width: 400px;
+    height: 100px;
+
+}
+
+/* *   POSITIONs */
+#lines{
+    position: absolute;
+    right: 30px;
+    top: 0px;
+
+}
+
+#trigger_checkbox{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+/* *    LOOKING AT */
+#lines span{
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: black;
+    border-radius: 2px;
+    margin-bottom: 1px;
+}
+
+/* *   TRIGGER BUTTON + positioning */
+input[type=checkbox]{
+    right: 40px;
+    top: 10px;
+    position: absolute;
+    transform: scale(3);
+    z-index: 13;
+    opacity: 0;
+}
+
+
+/* *    ASIDE MENU */
+
+#menu-aside{
+    position: absolute;
+    height: 100vh;
+    width: 90vw;
+    background-color: rgba(161, 64, 64);
+    /* opacity: .5; */
+
+    /* *  POSITIONING THE MENU - CONTAINS THE NUMBERS FROM trigger_checkbox */
+
+    right: -340px;
+    top: -50px;
+
+    /* *    ORDERING THE ELEMENTS */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+}
+
+
+/* *  TRIGGER */
+
+input[type=checkbox]:checked ~ #menu-aside{
+    right: -40px;
+    /* top: 40px; */
+    z-index: 2;
+    transition: 1s;
+}
+
+input[type=checkbox]:checked ~ #closing_{
+    opacity: 1;
+    z-index: 2;
+}
+
+    /* *CLOSE ICON ON MENU AFTER ACTIVATION! */
+    #closing_{
+        position: absolute;
+        z-index: 5;
+        right: 40px;
+        top: 10px;
+        opacity: 0;
+        transition: 1s;
+    }
+
+
 /* *************************** */
 /* !        MAIN                 */
 /* *************************** */
@@ -232,9 +328,17 @@ footer span{
         place-items: center;
     }
 
+    #nav_{
+        display: none;
+    }
+
+    #tripple{
+        display: inline-block;
+    }
+
     .pic{
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
     }
     .pic .first_img{
         height: 80vh;
